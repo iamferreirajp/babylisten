@@ -1,0 +1,63 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+p.one {
+    border-style: solid;
+    border-width: 1px;
+}
+</style>
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<script type="text/javascript">
+    setTimeout(function () { 
+      location.reload();
+    }, 10000);
+</script>
+
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1><center>Página de monitoramento</center></h1>
+            <p><center>Esta página dedica-se ao monitoramento de bebês utilizando o dispositivo wearable da telefonica/oi para prevenção de problemas com refluxo gástrico.</center></p>
+            <h2><center>Estado do Bebê</center></h2>
+            <center><p id="status" class="one"></p></center>
+                <% if(n >= 0 && n <= 40){ %>
+                <script type="text/javascript">
+                    
+                    var str = new String("O seu bebê precisa da sua atenção.");
+                    alert(str);
+                    document.getElementById("status").innerHTML = str.fontcolor( "red" );
+                </script>
+                <% console.log("VERMELHO"); %>
+                <% } %>
+                <% if(n < 0 && n >= -40){ %>
+                <script type="text/javascript">
+                    var str = new String("O seu bebê pode estar em uma posição inadequada.");
+                    document.getElementById("status").innerHTML = str.fontcolor( "blue" );
+                </script>
+                <% } %>
+                <% if(n < -40 || n > 40){ %>
+                <script type="text/javascript">
+                    var str = new String("O seu bebê está em segurança.");
+                    document.getElementById("status").innerHTML = str.fontcolor( "green" );
+                </script>
+                <% } %>
+                <p><center>As leituras são atualizados a cada segundo e o site é atualizado a cada 10 segundos para manter a consistência dos dados recebidos.</center></p>
+        </div>   
+    </main>
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+    
+</body>
+</html>
