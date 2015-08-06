@@ -1,10 +1,41 @@
 {
-  "name": "node-ejs",
-  "main": "server.js",
-  "dependencies": 
-  {
-    "ejs": "^1.0.0",
-    "express": "^4.6.1",
-    "kit-iot-wearable": "^1.0.10"
+  "name": "kit-iot-wearable",
+  "version": "1.0.10",
+  "description": "Módulo para o Kit IoT Wearable da Telefonica VIVO",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test",
+    "docs": "jsdoc2md ./lib/*.js > DOCS.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/telefonicadigital/kit-iot-wearable-node"
+  },
+  "keywords": [
+    "bluetooth2",
+    "bluetooth",
+    "kit-iot",
+    "kit-iot-wearable",
+    "wireless",
+    "development",
+    "wearable"
+  ],
+  "author": "Vitor Leal <vitor@telefonicabeta.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/telefonicadigital/kit-iot-wearable-node/issues"
+  },
+  "homepage": "https://github.com/telefonicadigital/kit-iot-wearable-node",
+  "dependencies": {
+    "bluetooth-serial-port": "^1.2.4",
+    "express": "^4.13.1",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-jshint": "^1.9.0",
+    "gulp-watch": "^3.0.0",
+    "jsdoc-to-markdown": "^0.5.9",
+    "should": "^4.6.0"
   }
 }
